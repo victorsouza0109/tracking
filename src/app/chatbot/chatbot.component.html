@@ -1,0 +1,18 @@
+<div class="col-md-12 row containerCard">
+    <div class="alingCheck">
+        <input type="text" placeholder="Digite aqui o titulo que procura..." [(ngModel)]="filterInput"
+            (ngModelChange)="filter()">
+
+        <input type="checkbox" [(ngModel)]="selectedAll" (change)="toggleSelectAll()">
+        <label>Selecionar todos</label>
+
+
+    </div>
+    <div *ngFor="let item of flowItemsFiltered" class="card" [class.selected]="isSelected(item)"
+        (click)="onSelect(item)">
+        <span class="material-icons" *ngIf="isSelected(item)">check</span>
+        <p>
+            {{ item.$title }}
+        </p>
+    </div>
+</div>

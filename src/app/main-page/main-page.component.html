@@ -1,0 +1,46 @@
+<div class="container">
+    <div class="col-md-12">
+        <ul class="journey">
+            <li
+                [ngClass]="{ 'is-step-on': step === 'chooseYourChatBot' || step === 'chooseTheBoxes' || step === 'chooseTheServices' || step === 'confirm' }">
+                1. Escolha seu ChatBot
+            </li>
+            <li
+                [ngClass]="{ 'is-step-on': step === 'chooseTheBoxes' || step === 'chooseTheServices' || step === 'confirm' }">
+                2. Escolha as caixinhas
+            </li>
+            <li [ngClass]="{ 'is-step-on': step === 'chooseTheServices' || step === 'confirm' }">
+                3. Escolha os serviços
+            </li>
+            <li [ngClass]="{ 'is-step-on': step === 'confirm' }">
+                4. Confirmação
+            </li>
+        </ul>
+
+    </div>
+    <div *ngIf="step === 'chooseYourChatBot'">
+        <div class="drop-area" [class.selected]="selectedFile" (click)="fileInput.click()">
+            <p *ngIf="!selectedFile">Clique para selecionar</p>
+            <p *ngIf="selectedFile">ChatBot selecionado: {{ selectedFile.name }}</p>
+            <input type="file" #fileInput style="display: none" (change)="onFileSelected($event)">
+        </div>
+        <div class="alingBt">
+            <button (click)="chooseTheBoxes()">Confirmar</button>
+            <button (click)="fileInput.click()">Trocar</button>
+        </div>
+    </div>
+    <div *ngIf="step === 'chooseTheBoxes'">
+        <app-chatbot [flowData]="dadosDoArquivo"></app-chatbot>
+        <div class="alingBt">
+            <button (click)="chooseTheServices()">Confirmar</button>
+        </div>
+    </div>
+    <div *ngIf="step === 'chooseTheServices'">
+        <div class="alingBt">
+            <button (click)="confirm()">Confirmar</button>
+        </div>
+    </div>
+    <div *ngIf="step === 'confirm'">
+        <h2>confirmação</h2>
+    </div>
+</div>

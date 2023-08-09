@@ -1,0 +1,81 @@
+.journey {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+
+    width: 100%;
+    display: inline-flex;
+
+    li {
+        display: inline-flex;
+        border-bottom: 2px solid #A1A1A1;
+        width: 100%;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+        color: #000000;
+        padding: 25px 0px;
+    }
+}
+
+ul {
+    .is-step-on {
+        color: green !important;
+        border-color: green !important;
+        font-weight: 600 !important;
+    }
+}
+
+.drop-area {
+    width: 100%;
+    height: 200px;
+    border: 2px dashed #ccc;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin-top: 10%;
+}
+
+.drop-area p {
+    font-size: 16px;
+    color: #55555588;
+    margin-bottom: 10px;
+}
+
+.drop-area.selected p {
+    color: #4caf50;
+}
+
+.drop-area.selected {
+    border-color: #4caf50;
+    color: #fff;
+}
+
+.alingBt {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-top: 2%;
+
+    button {
+        border: none;
+        width: 120px;
+        height: 40px;
+        border-radius: 30px;
+        background-color: rgb(218, 73, 73);
+        color: #fff;
+
+    }
+
+    button:first-child {
+        background-color: #4caf50;
+        color: #fff;
+        font-weight: 600;
+        margin-right: 1%;
+    }
+
+}

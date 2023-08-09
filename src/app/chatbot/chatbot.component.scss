@@ -1,0 +1,54 @@
+.card {
+    height: 100px;
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    flex-wrap: wrap;
+    /* Mudado de 1px para wrap para permitir a quebra de linha */
+    background-color: white;
+    /* Cor de fundo branca */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    /* Sombra */
+    margin: 4px;
+    /* Espaçamento de 2px em todos os lados */
+
+    span {
+        position: absolute;
+        font-size: 30px;
+        margin-left: 97%;
+        margin-top: -22%;
+        color: green;
+    }
+}
+
+.containerCard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid red 1px;
+}
+
+
+.card:hover {
+    transform: scale(1.03);
+    background-color: rgba(0, 128, 0, 0.432);
+    color: #f8f8f8;
+}
+
+.card.selected {
+    background-color: rgba(0, 128, 0, 0.432);
+    color: #f8f8f8;
+}
+
+.alingCheck {
+    display: flex;
+    align-content: center;
+    justify-content: right;
+    padding-right: 4px;
+
+    input {
+        margin-right: 5px;
+    }
+}
